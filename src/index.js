@@ -1,5 +1,6 @@
 import { getBaseColor } from './utils/colors';
 import { sdbm } from './utils/math';
+import drawGradient from './parts/gradient';
 import drawPupil from './parts/pupil';
 import drawIrisFlare from './parts/irisFlare';
 import drawIris from './parts/iris';
@@ -23,7 +24,8 @@ function drawEye() {
   const baseColorString = binary.substring(0, 3);
   const baseColor = getBaseColor(baseColorString);
 
-  drawIris(baseColor, viewportSize, irisSize);
+  const gradientId = drawGradient(baseColor, binary);
+  drawIris(gradientId, viewportSize, irisSize);
   drawIrisFlare(binary, baseColor, viewportSize, irisSize);
   const radius = drawPupil(binary, viewportSize);
   drawReflection(binary, radius, viewportSize);
