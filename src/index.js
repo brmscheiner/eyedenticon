@@ -1,15 +1,6 @@
 import { getBaseColor, getColorString, lighten } from './utils/colors';
 import { sdbm, polarToCartesian, describeArc } from './utils/math';
 
-export function render() {
-    const root = document.querySelector('app-root');
-    if (root) {
-        root.innerHTML = '<svg id="output">Hello World</svg>';
-    }
-
-    drawEye();
-}
-
 const viewportSize = 256;
 const irisSize = 90;
 
@@ -144,4 +135,11 @@ function drawEye() {
   drawReflection(binary, radius);
 }
 
-// drawEye();
+export function render() {
+  const root = document.querySelector('app-root');
+  if (root) {
+      root.innerHTML = '<div>Herrloo</div>'; // <svg id="output">Hello World</svg>
+  }
+
+  drawEye();
+}

@@ -79,7 +79,7 @@ if (process.env.SERVE) {
                 'node_modules/**',
                 'json/**'
             ],
-            throwOnError: true
+            throwOnError: false
         }),
         ...umdConfig.plugins
     ];
@@ -92,7 +92,7 @@ if (process.env.SERVE) {
         }),
         livereload({
             watch: 'dist',
-            verbose: false
+            verbose: true
         })
     );
     configurations.push(serveConfig);
